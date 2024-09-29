@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploader</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to external CSS -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="brand" href="/" title="iLoveIMG">
+                <img src="/latest_logo_png.png" alt="iLoveIMG">
+            </a>
+        </nav>
+    </header>
+
+    <h1>Upload and Transform Your Image</h1>
+    <form id="imageForm">
+        <label for="image" class="custom-file-upload">
+            Choose Image
+        </label>
+        <input type="file" name="image" id="image" accept="image/*" required><br><br>
+
+        <p id="fileNameDisplay">No file chosen</p>
+
+        <label for="format">Select format:</label>
+        <select name="format" id="format" required>
+            <option value="jpeg">JPEG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WEBP</option>
+        </select><br><br>
+
+        <label for="width">Enter width (optional):</label>
+        <input type="number" name="width" id="width"><br><br>
+
+        <label for="height">Enter height (optional):</label>
+        <input type="number" name="height" id="height"><br><br>
+
+        <button type="submit" id="uploadButton">Upload and Convert</button>
+        <div id="loader" style="display: none;">Loading...</div>
+    </form>
+
+    <div id="result" style="display:none;">
+        <h3>Download Converted Image:</h3>
+        <a id="downloadLink" href="#" style="display:none;" download>Click here to download</a>
+    </div>
+
+    <script src="/js/scripts.js"></script> <!-- Link to external JS -->
+</body>
+
+</html>
