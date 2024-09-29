@@ -11,12 +11,9 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT || 'mysql', // default to MySQL if no dialect is provided
     port: process.env.DB_PORT || 3306, // default to port 3306
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,  // Adjust timeout here
-      idle: 10000
-    }
+    dialectOptions: {
+      connectTimeout: 10000, // timeout in milliseconds
+    },
   }
 );
 
